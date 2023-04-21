@@ -14,44 +14,53 @@
 
     }
 
-    require '../vendor/autoload.php';
+    function tets_api()
+    {
+
+    
+
+        require '../vendor/autoload.php';
 
 
-    $query = '
-    query ($id: Int, $page: Int, $perPage: Int, $search: String) {
-    Page (page: $page, perPage: $perPage) {
-    pageInfo {
-      total
-      currentPage
-      lastPage
-      hasNextPage
-      perPage
+        $query = '
+        query ($id: Int, $page: Int, $perPage: Int, $search: String) {
+        Page (page: $page, perPage: $perPage) {
+        pageInfo {
+        total
+        currentPage
+        lastPage
+        hasNextPage
+        perPage
+        }
+        media (id: $id, search: $search) {
+        id
+        title {
+            romaji
+        }
+        type
+        genres
+        }
     }
-    media (id: $id, search: $search) {
-      id
-      title {
-        romaji
-      }
-      type
-      genres
     }
-  }
-}
-';
+    ';
 
-$variables = [
-    "search" => "Love Live",
-    "page" => 2,
-    "perPage" => 50
-];
+    $variables = [
+        "search" => "Love Live",
+        "page" => 2,
+        "perPage" => 50
+    ];
 
-$http = new GuzzleHttp\Client;
-$response = $http->post('https://graphql.anilist.co', [
-    'json' => [
-        'query' => $query,
-        'variables' => $variables,
-    ]
-]);
+    $http = new GuzzleHttp\Client;
+    $response = $http->post('https://graphql.anilist.co', [
+        'json' => [
+            'query' => $query,
+            'variables' => $variables,
+        ]
+    ]);
 
-echo $response->getBody();
+    echo $response->getBody();
+
+    }
+
+    tets_api();
 ?>
