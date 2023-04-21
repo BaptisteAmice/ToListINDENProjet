@@ -7,7 +7,7 @@ function test_session()
     if (isset($_SESSION['id'])) {
         echo json_encode($_SESSION['id']);
     } else {
-        echo json_encode("pas de session");
+        echo json_encode("T'es moche");
     }
 }
 

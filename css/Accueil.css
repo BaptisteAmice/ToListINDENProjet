@@ -20,6 +20,14 @@ header{
   navbar > a {
     padding: 10px;
     font-size: 24px;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  navbar > a > img {
+    height: 80px;
+    width: 80px;
   }
   
   navbar p {
