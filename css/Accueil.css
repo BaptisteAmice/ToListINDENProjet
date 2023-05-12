@@ -26,7 +26,7 @@ navbar > a {
   margin-bottom: auto;
 }
 
-navbar > a > img {
+header > img {
   height: 80px;
   width: 80px;
 }

@@ -10,14 +10,7 @@
     <body>
         <header>
             <?php
-            session_start();
-            if(isset($_SESSION["username"]))
-            {
-                $navbar=file_get_contents("../elements/NavbarConnected.html");
-            } else {
-                $navbar=file_get_contents("../elements/NavbarGuest.html");
-            }
-            echo $navbar;
+            require_once("./Header.php");
             ?>
         </header>
     </body>
