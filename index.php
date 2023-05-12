@@ -1,4 +1,4 @@
 <?php
-header("Location: Views/Accueil.php");
-exit();
+    header("Location: Views/Accueil.php");
+    exit();
 ?>
