@@ -1,38 +1,39 @@
 header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position:sticky ;
-    top:0;
-    left:0;
-    width:100%;
-    height:4em;
-     z-index: 2;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position:sticky ;
+  top:0;
+  left:0;
+  width:100%;
+  height:4em;
+  z-index: 2;
+}
   
-  navbar {
-    padding: 0px;
-    margin: 0px;
-    width: 88%;
-    display: flex;
-    flex-direction: row;
-  }
-  navbar > a {
-    padding: 10px;
-    font-size: 24px;
-    display: block;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
+navbar {
+  padding: 0px;
+  margin: 0px;
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+}
 
-  navbar > a > img {
-    height: 80px;
-    width: 80px;
-  }
+navbar > a {
+  padding: 10px;
+  font-size: 24px;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+navbar > a > img {
+  height: 80px;
+  width: 80px;
+}
   
-  navbar p {
-    margin: 0px;
-    padding: 10px;
-    font-size: 24px;
-    font-weight: bolder;
-  }
+navbar p {
+  margin: 0px;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bolder;
+}
