@@ -62,5 +62,5 @@
 
     }
 
-    tets_api();
+    test_db();
 ?>

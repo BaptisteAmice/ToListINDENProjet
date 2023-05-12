@@ -1,4 +1,5 @@
 <?php
+    require_once("../Controllers/ConnexionController.php");
     $view = '
     <!DOCTYPE html>
     <html>
@@ -40,57 +41,12 @@
         </body>
     </html>
     ';
-    
-
-    session_start();
-    if (!empty($_POST))
-    {
-        if(isset($_POST["username"]) && isset($_POST["password"]))
-        {
-            $_SESSION["username"] = $_POST["username"];
-        }
-        var_dump($_POST);
-        //session destroy
-        if($_POST["username"] == "destroy")
-        {
-            session_destroy();
-        }
-    }
-
     if(isset($_SESSION["username"]))
     {
-
         $view = 'connected' . $_SESSION["username"] . 
         '<form action="ClearSession.php" method="post">
             <input type="submit" value="Disconnect">
         </form>';
- 
     }
     echo $view;
-
 ?>
-
-
-<?php
-/*
-
-function test_session()
-{
-    session_start();
-    if (isset($_SESSION['id'])) {
-        echo json_encode($_SESSION['id']);
-    } else {
-        echo json_encode("T'es moche");
-    }
-}
-
-function create_session()
-{
-    session_start();
-    $_SESSION['id'] = 1;
-    echo json_encode($_SESSION['id']);
-}
-
-test_session();
-
-*/
