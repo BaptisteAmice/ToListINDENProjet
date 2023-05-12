@@ -1,5 +1,5 @@
 <?php
-    require_once("../Controllers/ConnexionController.php");
+    require_once("Controllers/ConnexionController.php");
     $view = '
     <!DOCTYPE html>
     <html>
