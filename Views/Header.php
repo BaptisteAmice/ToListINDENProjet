@@ -5,9 +5,9 @@ $rendu=$rendu.'<navbar>';
 session_start();
 if(isset($_SESSION["username"]))
 {
-    $rendu=$rendu.'<a href="MaPage.php">';
+    $rendu=$rendu.'<a href="/MaPage">';
     $rendu=$rendu.$_SESSION["username"];
-    $rendu=$rendu.'</a><a href="./Controllers/ClearSession.php">Deconnection</a>';
+    $rendu=$rendu.'</a><a href="./Controllers/ClearSession.php">Deconnexion</a>';
 } else {
     $rendu=$rendu.'<a href="/Connexion">Connexion</a>';
 }

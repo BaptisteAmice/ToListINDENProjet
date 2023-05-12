@@ -8,6 +8,9 @@ switch ($request) {
     case '/Connexion' :
         require __DIR__ . '/Views/Connexion.php';
         break;
+    case '/MaPage' :
+        require __DIR__ . '/Views/MaPage.php';
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/Views/index.php'; //temp

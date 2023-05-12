@@ -7,7 +7,7 @@
         <title>Ma page</title>
     </head>
     <body>
-        <?php require_once("./Header.php");?>
+        <?php require_once("./Views/Header.php");?>
         <p>Des infos pertinentes</p>
     </body>
 </html>
