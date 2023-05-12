@@ -9,7 +9,7 @@ if(isset($_SESSION["username"]))
     $rendu=$rendu.$_SESSION["username"];
     $rendu=$rendu.'</a><a href="./Controllers/ClearSession.php">Deconnection</a>';
 } else {
-    $rendu=$rendu.'<a href="./Views/Connexion.php">Connexion</a>';
+    $rendu=$rendu.'<a href="/Connexion">Connexion</a>';
 }
 $rendu=$rendu.'</navbar></header>';
 
