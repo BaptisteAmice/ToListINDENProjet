@@ -9,11 +9,10 @@
 
     <body>
         <header>
-            <navbar>
-
-            <a href="http://192.168.8.212:8000/Views/Accueil.php"><img src="https://imgur.com/7NWBQEx.png"></a>
-            <a href="Connexion.php">Connexion</a>
-            </navbar>
+            <?php
+            $navbar=file_get_contents("../elements/NavbarGuest.html");
+            echo $navbar;
+            ?>
         </header>
     </body>
 </html>
