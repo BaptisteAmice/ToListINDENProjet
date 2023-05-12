@@ -7,10 +7,7 @@
             $_SESSION["username"] = $_POST["username"];
         }
     }
-    if (isset($_SERVER["HTTP_REFERER"])) {
-        $redirect=$_SERVER["HTTP_REFERER"];
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-    } else {
-        $redirect="Accueil.php";
+    if(isset($_SESSION["username"]))
+    {
+        header("Location: /");
     }
-?>

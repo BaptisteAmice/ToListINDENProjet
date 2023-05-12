@@ -1,5 +1,9 @@
 <?php 
-$_SESSION["old_ref"]=$_SERVER["HTTP_REFERER"];;
+    require_once("Controllers/ConnexionController.php");
+    if(isset($_SESSION["username"]))
+    {
+        header("Location: /");
+    }
 ?>
 
 <html>
@@ -11,7 +15,7 @@ $_SESSION["old_ref"]=$_SERVER["HTTP_REFERER"];;
     <body>
         <div class="login">
             <h1>Login</h1>
-            <form action="../Controllers/ConnexionController.php" method="post">
+            <form action="/Connexion" method="post">
                 <label for="username">
                     <i class="fas fa-user"></i>
                 </label>
@@ -25,7 +29,7 @@ $_SESSION["old_ref"]=$_SERVER["HTTP_REFERER"];;
         </div>
         <div class="create_accout">
         <h1>Create account</h1>
-        <form action="../Controllers/ConnexionController.php" method="post">
+        <form action="/Connexion" method="post">
             <label for="username_create">
                 <i class="fas fa-user"></i>
             </label>
