@@ -1,5 +1,5 @@
 <?php
-$rendu='<header><img src="https://imgur.com/7NWBQEx.png">';
+$rendu='<header><a href="/"> <img src="https://imgur.com/7NWBQEx.png"></a>';
 $rendu=$rendu.'<navbar>';
 
 session_start();
