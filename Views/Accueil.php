@@ -1,5 +1,3 @@
-<?php
-?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../css/Accueil.css" /> 
@@ -8,6 +6,6 @@
     </head>
 
     <body>
-        <?php require_once("./Header.php");?>
+        <?php require_once("./Views/Header.php");?>
     </body>
 </html>
