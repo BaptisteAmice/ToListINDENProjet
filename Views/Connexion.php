@@ -1,5 +1,5 @@
 <?php
-    $nonConnectedView = '
+    $view = '
     <!DOCTYPE html>
     <html>
         <head>
@@ -40,20 +40,33 @@
         </body>
     </html>
     ';
+    
 
-    $connectedView = 'connected';
-    echo $nonConnectedView;
-
+    session_start();
     if (!empty($_POST))
     {
-
-
         if(isset($_POST["username"]) && isset($_POST["password"]))
         {
-            session_start();
             $_SESSION["username"] = $_POST["username"];
         }
+        var_dump($_POST);
+        //session destroy
+        if($_POST["username"] == "destroy")
+        {
+            session_destroy();
+        }
     }
+
+    if(isset($_SESSION["username"]))
+    {
+
+        $view = 'connected' . $_SESSION["username"] . 
+        '<form action="ClearSession.php" method="post">
+            <input type="submit" value="Disconnect">
+        </form>';
+ 
+    }
+    echo $view;
 
 ?>
 
