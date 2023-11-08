@@ -18,7 +18,7 @@ export class ArtistsController {
         description: 'The user has been successfully created.'
     })
     async create(@Body() input: ArtistInput): Promise<Artist> {
-        return this.service.create(input.id,input.lastname,input.firstname,input.birthdate,input.nationality);
+        return this.service.create(input.lastname,input.firstname,input.birthdate,input.nationality);
     }
 
     /*

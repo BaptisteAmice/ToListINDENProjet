@@ -3,14 +3,6 @@ import { ApiProperty } from "@nestjs/swagger";
 
 
 export class ArtistInput {
-
-    @ApiProperty({
-        description: 'The id of the artist',
-        example: "1",
-        type: String,
-    })
-    id: number;
-
     @ApiProperty({
         description: 'The lastname of the artist',
         example: "John",

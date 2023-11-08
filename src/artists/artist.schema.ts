@@ -6,9 +6,6 @@ export type ArtistDocument = HydratedDocument<Artist>;
 
 @Schema()
 export class Artist {
-
-    @Prop()
-    id: number;
     @Prop()
     lastname: string;
     @Prop()
@@ -18,8 +15,7 @@ export class Artist {
     @Prop()
     nationality: string;
 
-    constructor(id :number, lastname: string,firstname: string,birthdate: Date, nationality: string) {
-        this.id = id;
+    constructor(lastname: string,firstname: string,birthdate: Date, nationality: string) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.birthdate = birthdate;
