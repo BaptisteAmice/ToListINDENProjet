@@ -2,8 +2,9 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ListsService } from './lists.service';
 import { List } from './list.schema';
 import { ListInput } from './list.input';
-import { ApiCreatedResponse } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('lists')
 @Controller('lists')
 export class ListsController {
 

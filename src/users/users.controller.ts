@@ -1,9 +1,10 @@
 import { Controller, Get, Body, Post, Param } from '@nestjs/common';
 import { User } from './user.schema';
-import { ApiCreatedResponse } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 import { UsersService } from './users.service';
 import { UserInput } from './user.input';
 
+@ApiTags('users')
 @Controller('users')
 export class UsersController {
 
