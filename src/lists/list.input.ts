@@ -19,14 +19,14 @@ export class ListInput {
     @ApiProperty({
         description: 'The types of titles in the list',
         example: "movie",
-        type: String,
+        type: [String],
     })
     types: TitleType[];
 
     @ApiProperty({
         description: 'The tags of titles the list',
         example: "action",
-        type: String
+        type: [String],
     })
     tags: string[];
 }

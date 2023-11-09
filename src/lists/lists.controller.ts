@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Delete } from '@nestjs/common';
 import { ListsService } from './lists.service';
 import { List } from './list.schema';
 import { ListInput } from './list.input';
@@ -28,6 +28,11 @@ export class ListsController {
     @Get(':id')
     async getById(@Param('id') id: number): Promise<List> {
         return this.service.getById(id);
+    }
+
+    @Delete(':id')
+    async deleteById(@Param() parameter): Promise<boolean> {
+        return this.service.deleteById(parameter.id);
     }
 
 
