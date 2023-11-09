@@ -5,7 +5,6 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class ArtistsService {
-
     constructor(@InjectModel(Artist.name) private artistModel: Model<Artist>) {}
 
 
@@ -21,6 +20,11 @@ export class ArtistsService {
 
     getById(id: number): Artist | PromiseLike<Artist> {
         return this.artistModel.findOne({_id: id}).exec();
+    }
+
+    deleteById(id: any): boolean | PromiseLike<boolean> {
+        this.artistModel.deleteOne({_id: id}).exec();
+        return true;
     }
 
 

@@ -20,4 +20,9 @@ export class UsersService {
     getById(id: number): User | PromiseLike<User> {
         return this.userModel.findOne({_id: id}).exec();
     }
+
+    deleteById(id: any): boolean | PromiseLike<boolean> {
+        this.userModel.deleteOne({_id: id}).exec();
+        return true;
+    }
 }
