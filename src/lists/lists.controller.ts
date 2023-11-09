@@ -35,5 +35,10 @@ export class ListsController {
         return this.service.deleteById(parameter.id);
     }
 
+    @Get('content/:listId/:userId')
+    async getContent(@Param('listId') listId: number, @Param('userId') userId: number): Promise<List> {
+        return this.service.getContent(listId, userId);
+    }
+
 
 }

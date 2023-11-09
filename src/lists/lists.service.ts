@@ -6,7 +6,6 @@ import { TitleType } from 'src/titles/title.types';
 
 @Injectable()
 export class ListsService {
-
     constructor(@InjectModel(List.name) private listModel: Model<List>) {}
 
 
@@ -27,6 +26,10 @@ export class ListsService {
     deleteById(id: any): boolean | PromiseLike<boolean> {
         this.listModel.deleteOne({_id: id}).exec();
         return true;
+    }
+
+    getContent(listId: number, userId: number): List | PromiseLike<List> {
+        throw new Error('Method not implemented.');//todo
     }
 
 
