@@ -19,7 +19,7 @@ export class UsersController {
         description: 'The user has been successfully created.'
     })
     async create(@Body() input: UserInput): Promise<User> {
-        return this.service.create(input.id, input.pseudo, input.pfp, input.password, input.r_token, input.inscription, input.mail);
+        return this.service.create(input.pseudo, input.pfp, input.password, input.r_token, input.inscription, input.mail);
     }
 
     @Get('')
