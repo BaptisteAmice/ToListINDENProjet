@@ -32,8 +32,9 @@ export class ArtistsController {
         return this.service.getById(id);
     }
 
+    /*
     @Delete(':id')
     async deleteById(@Param() parameter): Promise<boolean> {
        // return this.service.deleteById(parameter.id);
-    }
+    }*/
 }
