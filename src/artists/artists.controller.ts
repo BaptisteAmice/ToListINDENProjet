@@ -21,15 +21,6 @@ export class ArtistsController {
         return this.service.create(input.lastname,input.firstname,input.birthdate,input.nationality);
     }
 
-    /*
-    async getById(id: number): Promise<Artist> {
-        const user : Artist = await this.artistModel.findOne({where: {id: Equal(id)}});
-        if (user === undefined) {
-            throw new HttpException('Could not find the user with id ' + id, HttpStatus.NOT_FOUND);
-        }
-        return user;
-    }*/
-
     @Get('')
     async getAll(): Promise<Artist[]> {
         return this.service.getAll();

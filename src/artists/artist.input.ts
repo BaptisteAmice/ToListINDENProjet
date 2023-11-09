@@ -12,7 +12,7 @@ export class ArtistInput {
 
     @ApiProperty({
         description: 'The firstname of the artist',
-        example: "John",
+        example: "Smith",
         type: String,
     })
     firstname: string;
@@ -31,6 +31,4 @@ export class ArtistInput {
         type: String,
     })
     nationality: string;
-
-    
 }
