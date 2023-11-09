@@ -7,8 +7,6 @@ export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User {
     @Prop()
-    id: string;
-    @Prop()
     pseudo: string;
     @Prop()
     pfp: string;
@@ -21,8 +19,7 @@ export class User {
     @Prop()
     mail: string;
 
-    constructor(id: string, pseudo: string, pfp: string, password: string, r_token: string, inscription: Date, mail: string) {
-        this.id=id;
+    constructor(pseudo: string, pfp: string, password: string, r_token: string, inscription: Date, mail: string) {
         this.pseudo=pseudo;
         this.pfp=pfp;
         this.password=password;

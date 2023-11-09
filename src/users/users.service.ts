@@ -7,8 +7,8 @@ import { Model } from 'mongoose';
 export class UsersService {
     constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-    async create(id:string, pseudo:string, pfp:string, password:string, r_token:string, inscription:Date, mail:string) : Promise<User> {
-        const user = new User(id, pseudo, pfp, password, r_token, inscription, mail);
+    async create(pseudo:string, pfp:string, password:string, r_token:string, inscription:Date, mail:string) : Promise<User> {
+        const user = new User(pseudo, pfp, password, r_token, inscription, mail);
         const createdUser = new this.userModel(user);
         return createdUser.save();
     }
