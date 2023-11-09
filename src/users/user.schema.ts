@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import { Consumption } from 'src/consumptions/consumption.schema';
 import { List } from 'src/lists/list.schema';
 
 export type UserDocument = HydratedDocument<User>;
@@ -21,6 +22,8 @@ export class User {
     mail: string;
     @Prop()
     userLists: List[];
+    @Prop()
+    consumptionList: Consumption[];
 
     constructor(pseudo: string, pfp: string, password: string, r_token: string, inscription: Date, mail: string) {
         this.pseudo=pseudo;
@@ -30,6 +33,7 @@ export class User {
         this.inscription=inscription;
         this.mail=mail;
         this.userLists = [];
+        this.consumptionList = [];
     }
 }
 
