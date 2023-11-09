@@ -1,8 +1,9 @@
 import { Body, Controller, Param, Post } from '@nestjs/common';
 import { TitlesService } from './titles.service';
 import { Title } from './title.schema';
-import { ApiCreatedResponse } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('titles')
 @Controller('titles')
 export class TitlesController {
     constructor(
