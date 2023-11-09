@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { List } from './list.schema';
 import { Model } from 'mongoose';
-import { TitleType } from 'src/titles/title.schema';
+import { TitleType } from 'src/titles/title.types';
 
 @Injectable()
 export class ListsService {

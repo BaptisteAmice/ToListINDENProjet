@@ -1,7 +1,8 @@
-import { Body, Controller, Param, Post, Delete } from '@nestjs/common';
+import { Body, Controller, Param, Post, Delete, Get } from '@nestjs/common';
 import { TitlesService } from './titles.service';
 import { Title } from './title.schema';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { TitleInput } from './title.input';
 
 @ApiTags('titles')
 @Controller('titles')
@@ -10,13 +11,13 @@ export class TitlesController {
         private service:TitlesService
     ) {}
 
-    /*
+
     @Post()
     @ApiCreatedResponse({
         description: 'The user has been successfully created.'
     })
     async create(@Body() input: TitleInput): Promise<Title> {
-        return this.service.create(////////
+        return this.service.create(input.title,input.type,input.description,input.releaseDateStart,input.releaseDateEnd,input.country,input.episodeCount);
     }
 
     @Get('')
@@ -33,6 +34,5 @@ export class TitlesController {
     async deleteById(@Param() parameter): Promise<boolean> {
         return this.service.deleteById(parameter.id);
     }
-*/
 
 }

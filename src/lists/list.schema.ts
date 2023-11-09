@@ -1,7 +1,7 @@
 import { Type } from '@nestjs/common';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import { Title, TitleType } from 'src/titles/title.schema';
+import { TitleType } from 'src/titles/title.types';
 
 export type ListDocument = HydratedDocument<List>;
 

@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { TitleType } from "./title.schema";
+import { TitleType } from "./title.types";
 
 export class TitleInput {
     @ApiProperty({
@@ -12,10 +12,10 @@ export class TitleInput {
 
     @ApiProperty({
         description: 'The types of the title',
-        example: ['Doe', 'Smith', 'Johnson'],
-        type: [TitleType],
+        example: "movie",
+        type: String,
     })
-    type: TitleType[];
+    type: TitleType;
 
 
     @ApiProperty({

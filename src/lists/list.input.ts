@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { TitleType } from "src/titles/title.schema";
+import { TitleType } from "src/titles/title.types";
 
 export class ListInput {
     @ApiProperty({
