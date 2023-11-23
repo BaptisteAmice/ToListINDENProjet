@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { TitleType } from "./title.types";
+import { TitleType, alternatif } from "./title.types";
 
 export class TitleInput {
     @ApiProperty({
@@ -55,5 +55,12 @@ export class TitleInput {
         type: String,
     })
     episodeCount: number;
+
+    @ApiProperty({
+        description: 'Alternate title for a title',
+        example: "{'Spanish', 'Bob el bricolo'}",
+        type: String,
+    })
+    alternate_title: alternatif;
 
 }

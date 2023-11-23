@@ -4,3 +4,8 @@ export enum TitleType {
     music="music",
     game="game",
 }
+
+export class alternatif {
+    langage;
+    title;
+}
