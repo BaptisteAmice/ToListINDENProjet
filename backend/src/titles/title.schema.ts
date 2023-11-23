@@ -23,6 +23,8 @@ export class Title {
     episodeCount: number;
     @Prop()
     alternate_title: alternatif;
+    @Prop()
+    relation_id: number;
 
     constructor(title: string, type: TitleType, description: string, releaseDateStart: Date, releaseDateEnd: Date, country: string, episodeCount: number, alternate_title: alternatif) {
         this.title = title;
@@ -33,6 +35,7 @@ export class Title {
         this.country = country;
         this.episodeCount = episodeCount;
         this.alternate_title = alternate_title;
+        this.relation_id = -1;
     }
 }
 

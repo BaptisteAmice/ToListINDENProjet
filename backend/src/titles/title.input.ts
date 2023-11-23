@@ -9,14 +9,12 @@ export class TitleInput {
     })
     title: string;
 
-
     @ApiProperty({
         description: 'The types of the title',
         example: "movie",
         type: String,
     })
     type: TitleType;
-
 
     @ApiProperty({
         description: 'The description of the title',
@@ -32,7 +30,6 @@ export class TitleInput {
     })
     releaseDateStart: Date;
 
-
     @ApiProperty({
         description: 'The date the release of the title ended',
         example: "01/12/2010",
@@ -40,14 +37,12 @@ export class TitleInput {
     })
     releaseDateEnd: Date;
 
-
     @ApiProperty({
         description: 'The country of the title production',
         example: "USA",
         type: String,
     })
     country: string;
-
 
     @ApiProperty({
         description: 'The number of episodes of the title',
@@ -62,5 +57,12 @@ export class TitleInput {
         type: String,
     })
     alternate_title: alternatif;
+
+    @ApiProperty({
+        description: 'The id of a relation between titles',
+        example: "10",
+        type: String,
+    })
+    relation_id: number;
 
 }
