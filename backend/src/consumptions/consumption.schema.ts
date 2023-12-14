@@ -10,13 +10,25 @@ export type ConsumptionDocument = HydratedDocument<Consumption>;
 @Schema()
 export class Consumption {
     @Prop()
-    piece: Title; //if a title is deleted from the database, it won't be deleted from the user consumption list
+    piece: Title; 
+
     @Prop()
-    state: ConsumptionStatus;
+    user: User;
+    
+    @Prop()
+    state: string;
     @Prop()
     episodeConsumed: number;
     @Prop()
     rating: number;
+
+    constructor(piece: Title, user: User, state: string, episodeConsumed: number, rating: number) {
+        this.piece = piece;
+        this.user = user;
+        this.state = state;
+        this.episodeConsumed = episodeConsumed;
+        this.rating = rating;
+    }
 }
 
 export const ConsumptionSchema = SchemaFactory.createForClass(Consumption);

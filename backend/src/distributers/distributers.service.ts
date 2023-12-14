@@ -21,6 +21,12 @@ export class DistributersService {
         return this.distributerModel.findOne({_id: id}).exec();
     }
 
+    setById(id: string, name: string, url: string, country: string): Distributer | PromiseLike<Distributer> {
+        this.distributerModel.updateOne({_id: id}, {name: name, url: url, country: country}).exec();
+        //todo test if it works
+        return this.getById(id);
+    }
+
     deleteById(id: string): boolean | PromiseLike<boolean> {
         this.distributerModel.findOneAndDelete({_id: id}).exec();
         return true;

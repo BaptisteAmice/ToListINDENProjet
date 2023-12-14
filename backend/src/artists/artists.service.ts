@@ -22,6 +22,13 @@ export class ArtistsService {
         return this.artistModel.findOne({_id: id}).exec();
     }
 
+    setById(id: string, lastname: string,firstname: string,birthdate: Date,nationality: string): Artist | PromiseLike<Artist> {
+        this.artistModel.updateOne({_id: id}, {lastname: lastname, firstname: firstname, birthdate: birthdate, nationality: nationality}).exec();
+        //todo test if it works
+        return this.getById(id);
+    }
+
+
     deleteById(id: string): boolean | PromiseLike<boolean> {
         this.artistModel.findOneAndDelete({_id: id}).exec();
         return true;

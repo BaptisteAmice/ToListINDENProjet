@@ -19,11 +19,11 @@ export class RelationsController {
         description: 'The relation has been successfully created.'
     })
     async create(@Body() input: RelationInput): Promise<Relation> {
-        return this.service.create(input.name);
+        return this.service.create(input.currentTitle, input.relatedTitle, input.name, input.reciprocalName);
     }
 
     @Get('')
-    async getAll(): Promise<RelationInput[]> {
+    async getAll(): Promise<Relation[]> {
         return this.service.getAll();
     }
 
@@ -34,7 +34,7 @@ export class RelationsController {
         type: String,
         required: true
     })
-    async getById(@Param('id') id: string): Promise<RelationInput> {
+    async getById(@Param('id') id: string): Promise<Relation> {
         return this.service.getById(id);
     }
 }

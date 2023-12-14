@@ -56,12 +56,4 @@ export class TitleInput {
         type: String,
     })
     alternate_title: string;
-
-    @ApiProperty({
-        description: 'The id of a relation between titles',
-        example: "10",
-        type: String,
-    })
-    relation_id: string;
-
 }
