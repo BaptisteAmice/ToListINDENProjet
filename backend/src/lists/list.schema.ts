@@ -1,7 +1,6 @@
 import { Type } from '@nestjs/common';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import { TitleType } from 'src/titles/title.types';
 
 export type ListDocument = HydratedDocument<List>;
 
@@ -12,18 +11,22 @@ export class List {
     @Prop()
     description: string;
     @Prop()
-    types: TitleType[];
+    types: string[];
     @Prop()
     tags: string[];
+    @Prop()
+    consuptionStatus: string[];
+
     
     //todo link to an user
     //@Prop()
 
-    constructor(name: string, description: string, types: TitleType[], tags: string[]) {
+    constructor(name: string, description: string, types: string[], tags: string[], consuptionStatus: string[]) {
         this.name = name;
         this.description = description;
         this.types = types;
         this.tags = tags;
+        this.consuptionStatus = consuptionStatus;
     }
 }
 

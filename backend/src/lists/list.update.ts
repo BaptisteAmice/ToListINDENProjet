@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class ListInput {
+export class ListUpdate {
     @ApiProperty({
         description: 'The name of the list',
         example: "American action movies",
@@ -31,7 +31,7 @@ export class ListInput {
 
     @ApiProperty({
         description: 'The status of the consumption of the titles in the list',
-        example: "to watch",
+        example: "watched",
         type: [String],
     })
     consuptionStatus: string[];

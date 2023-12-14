@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import { TitleType, alternatif } from './title.types';
 
 export type TitleDocument = HydratedDocument<Title>;
 
@@ -10,7 +9,7 @@ export class Title {
     title: string;
     //enum types {movie, series, episode}
     @Prop()
-    type: TitleType;
+    type: string;
     @Prop()
     description: string;
     @Prop()
@@ -22,11 +21,11 @@ export class Title {
     @Prop()
     episodeCount: number;
     @Prop()
-    alternate_title: alternatif;
+    alternate_title: string;
     @Prop()
     relation_id: number;
 
-    constructor(title: string, type: TitleType, description: string, releaseDateStart: Date, releaseDateEnd: Date, country: string, episodeCount: number, alternate_title: alternatif) {
+    constructor(title: string, type: string, description: string, releaseDateStart: Date, releaseDateEnd: Date, country: string, episodeCount: number, alternate_title: string) {
         this.title = title;
         this.type = type;
         this.description = description;

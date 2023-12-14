@@ -1,3 +1,4 @@
+/*
 export enum TitleType {
     cinema="cinema",
     book="book",
@@ -8,4 +9,4 @@ export enum TitleType {
 export class alternatif {
     langage;
     title;
-}
+}*/
