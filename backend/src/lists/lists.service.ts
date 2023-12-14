@@ -22,22 +22,22 @@ export class ListsService {
         return this.listModel.find().exec();
     }
 
-    getById(id: number): Promise<List> {
+    getById(id: string): Promise<List> {
         return this.listModel.findOne({_id: id}).exec();
     }
 
-    setById(id: number, name: string, description: string, types: string[], tags: string[], consuptionStatus: string[]): Promise<List> {
+    setById(id: string, name: string, description: string, types: string[], tags: string[], consuptionStatus: string[]): Promise<List> {
         this.listModel.updateOne({_id: id}, {name: name, description: description, types: types, tags: tags, consuptionStatus: consuptionStatus}).exec();
         //todo test if it works
         return this.getById(id);
     }
 
-    deleteById(id: any): boolean | PromiseLike<boolean> {
-        this.listModel.deleteOne({_id: id}).exec();
+    deleteById(id: string): boolean | PromiseLike<boolean> {
+        this.listModel.findOneAndDelete({_id: id}).exec();
         return true;
     }
 
-    getContent(listId: number, userId: number): List | PromiseLike<List> {
+    getContent(listId: string, userId: string): List | PromiseLike<List> {
         //get all titles consumed by the user
         //todo -> get from service
 

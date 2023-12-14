@@ -1,7 +1,7 @@
 import { Body, Controller, Param, Post, Delete, Get } from '@nestjs/common';
 import { TitlesService } from './titles.service';
 import { Title } from './title.schema';
-import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { TitleInput } from './title.input';
 
 @ApiTags('titles')
@@ -26,13 +26,25 @@ export class TitlesController {
     }
 
     @Get(':id')
-    async getById(@Param('id') id: number): Promise<Title> {
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the title',
+        type: String,
+        required: true
+    })
+    async getById(@Param('id') id: string): Promise<Title> {
         return this.service.getById(id);
     }
 
     @Delete(':id')
-    async deleteById(@Param() parameter): Promise<boolean> {
-        return this.service.deleteById(parameter.id);
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the title',
+        type: String,
+        required: true
+    })
+    async deleteById(@Param('id') id: string): Promise<boolean> {
+        return this.service.deleteById(id);
     }
 
 }

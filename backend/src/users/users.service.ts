@@ -17,12 +17,12 @@ export class UsersService {
         return this.userModel.find().exec();
     }
 
-    getById(id: number): User | PromiseLike<User> {
+    getById(id: string): User | PromiseLike<User> {
         return this.userModel.findOne({_id: id}).exec();
     }
 
-    deleteById(id: any): boolean | PromiseLike<boolean> {
-        this.userModel.deleteOne({_id: id}).exec();
+    deleteById(id: string): boolean | PromiseLike<boolean> {
+        this.userModel.findOneAndDelete({_id: id}).exec();
         return true;
     }
 }

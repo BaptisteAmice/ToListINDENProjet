@@ -1,6 +1,6 @@
 import { Controller, Get, Body, Post, Param, Delete } from '@nestjs/common';
 import { Artist } from './artist.schema';
-import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ArtistsService } from './artists.service';
 import { ArtistInput } from './artist.input';
 
@@ -28,12 +28,24 @@ export class ArtistsController {
     }
 
     @Get(':id')
-    async getById(@Param('id') id: number): Promise<Artist> {
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the artist',
+        type: String,
+        required: true
+    })
+    async getById(@Param('id') id: string): Promise<Artist> {
         return this.service.getById(id);
     }
 
     
     @Delete(':id')
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the artist',
+        type: String,
+        required: true
+    })
     async deleteById(@Param() parameter): Promise<boolean> {
         return this.service.deleteById(parameter.id);
     }

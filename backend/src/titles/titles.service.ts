@@ -19,12 +19,13 @@ export class TitlesService {
         return this.titleModel.find().exec();
     }
 
-    getById(id: number): Promise<Title> {
+    getById(id: string): Promise<Title> {
         return this.titleModel.findOne({_id: id}).exec();
     }
 
-    deleteById(id: any): boolean | PromiseLike<boolean> {
-        this.titleModel.deleteOne({_id: id}).exec();
+    deleteById(id: string): boolean {
+        this.titleModel.findOneAndDelete({_id: id}).exec();
+        //todo: check if deleted
         return true;
     }
 

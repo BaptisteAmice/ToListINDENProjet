@@ -18,12 +18,12 @@ export class ArtistsService {
         return this.artistModel.find().exec();
     }
 
-    getById(id: number): Artist | PromiseLike<Artist> {
+    getById(id: string): Artist | PromiseLike<Artist> {
         return this.artistModel.findOne({_id: id}).exec();
     }
 
-    deleteById(id: any): boolean | PromiseLike<boolean> {
-        this.artistModel.deleteOne({_id: id}).exec();
+    deleteById(id: string): boolean | PromiseLike<boolean> {
+        this.artistModel.findOneAndDelete({_id: id}).exec();
         return true;
     }
 

@@ -30,10 +30,10 @@ export class ListsController {
     @ApiParam({
         name: 'id',
         description: 'The id of the list',
-        type: Number,
+        type: String,
         required: true
     })
-    async getById(@Param('id') id: number): Promise<List> {
+    async getById(@Param('id') id: string): Promise<List> {
         return this.service.getById(id);
     }
 
@@ -41,7 +41,7 @@ export class ListsController {
     @ApiParam({
         name: 'id',
         description: 'The id of the list',
-        type: Number,
+        type: String,
         required: true
     })
     @ApiCreatedResponse({
@@ -58,7 +58,7 @@ export class ListsController {
     @ApiParam({
         name: 'id',
         description: 'The id of the list',
-        type: Number,
+        type: String,
         required: true
     })
     async deleteById(@Param() parameter): Promise<boolean> {
@@ -69,16 +69,16 @@ export class ListsController {
     @ApiParam({
         name: 'listId',
         description: 'The id of the list',
-        type: Number,
+        type: String,
         required: true
     })
     @ApiParam({
         name: 'userId',
         description: 'The id of the user',
-        type: Number,
+        type: String,
         required: true
     })
-    async getContent(@Param('listId') listId: number, @Param('userId') userId: number): Promise<List> {
+    async getContent(@Param('listId') listId: string, @Param('userId') userId: string): Promise<List> {
         return this.service.getContent(listId, userId);
     }
 

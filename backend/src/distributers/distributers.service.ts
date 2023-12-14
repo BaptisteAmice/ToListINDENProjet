@@ -17,7 +17,12 @@ export class DistributersService {
         return this.distributerModel.find().exec();
     }
 
-    getById(id: number): Distributer | PromiseLike<Distributer> {
+    getById(id: string): Distributer | PromiseLike<Distributer> {
         return this.distributerModel.findOne({_id: id}).exec();
+    }
+
+    deleteById(id: string): boolean | PromiseLike<boolean> {
+        this.distributerModel.findOneAndDelete({_id: id}).exec();
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 import { Controller, Get, Body, Post, Param } from '@nestjs/common';
 import { Relation } from './relation.schema';
-import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { RelationsService } from './relations.service';
 import { RelationInput } from './relation.input';
 
@@ -28,7 +28,13 @@ export class RelationsController {
     }
 
     @Get(':id')
-    async getById(@Param('id') id: number): Promise<RelationInput> {
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the relation',
+        type: String,
+        required: true
+    })
+    async getById(@Param('id') id: string): Promise<RelationInput> {
         return this.service.getById(id);
     }
 }

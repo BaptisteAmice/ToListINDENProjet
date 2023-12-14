@@ -62,6 +62,6 @@ export class TitleInput {
         example: "10",
         type: String,
     })
-    relation_id: number;
+    relation_id: string;
 
 }

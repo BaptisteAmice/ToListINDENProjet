@@ -17,7 +17,12 @@ export class RelationsService {
         return this.relationModel.find().exec();
     }
 
-    getById(id: number): Relation | PromiseLike<Relation> {
+    getById(id: string): Relation | PromiseLike<Relation> {
         return this.relationModel.findOne({_id: id}).exec();
+    }
+
+    deleteById(id: string): boolean | PromiseLike<boolean> {
+        this.relationModel.findOneAndDelete({_id: id}).exec();
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 import { Controller, Get, Body, Post, Param } from '@nestjs/common';
 import { Distributer } from './distributer.schema';
-import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { DistributersService } from './distributers.service';
 import { DistributerInput } from './distributer.input';
 
@@ -28,7 +28,13 @@ export class DistributersController {
     }
 
     @Get(':id')
-    async getById(@Param('id') id: number): Promise<DistributerInput> {
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the distributer',
+        type: String,
+        required: true
+    })
+    async getById(@Param('id') id: string): Promise<DistributerInput> {
         return this.service.getById(id);
     }
 }
