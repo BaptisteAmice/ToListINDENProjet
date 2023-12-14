@@ -1,0 +1,11 @@
+page listes officielles / listes customs
+
+
+
+mylist/
+genresOr / genre[]="anime"
+genresAnd
+category=""
+
+
+imports api
