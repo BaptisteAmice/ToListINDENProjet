@@ -1,0 +1,1 @@
+Un fichier "USER MANUAL" qui explique avec des captures d'écran le "parcours utilisateur", c'est à dire la logique de l'application et ses différentes fonctionnalités dans une suite fluide d'actions.
