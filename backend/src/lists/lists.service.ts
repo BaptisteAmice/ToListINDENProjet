@@ -2,12 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { List } from './list.schema';
 import { Model } from 'mongoose';
+import { ConsumptionsService } from 'src/consumptions/consumptions.service';
+import { Consumption } from 'src/consumptions/consumption.schema';
 
 @Injectable()
 export class ListsService {
 
     constructor(
         @InjectModel(List.name) private listModel: Model<List>,
+        private readonly consumptionService: ConsumptionsService,
 
     ) {}
 
@@ -37,14 +40,14 @@ export class ListsService {
         return true;
     }
 
-    getContent(listId: string, userId: string): List | PromiseLike<List> {
+    getContent(listId: string, userId: string): Promise<Consumption[]> {
         //get all titles consumed by the user
-        //todo -> get from service
+        let consumptions = this.consumptionService.getByUserId(userId);
 
         //filter by using the criteria of the list
+        //TODOOOOOOOOOOOOOOOOOOOOOOOOO
 
-        throw new Error('Method not implemented.');
-        
+        return consumptions;
     }
 
 

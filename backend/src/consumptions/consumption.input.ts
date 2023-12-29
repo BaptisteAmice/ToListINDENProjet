@@ -12,7 +12,7 @@ export class ConsumptionInput {
 
     @ApiProperty({
         description: 'The user id',
-        example: "654ca2888d15f7020b656055",
+        example: "654ca63c99312126cc65a5af",
         type: String,
     })
     userId: string;

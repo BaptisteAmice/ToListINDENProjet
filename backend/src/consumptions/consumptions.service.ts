@@ -24,19 +24,25 @@ export class ConsumptionsService {
         return this.consumptionModel.find().exec();
     }
 
-    getById(id: string): Consumption | PromiseLike<Consumption> {
+    async getById(id: string): Promise<Consumption> {
         return this.consumptionModel.findOne({_id: id}).exec();
     }
 
-    setById(id: string, titleId: string, userId, status: string, episode: number, rating: number): Consumption | PromiseLike<Consumption> {
+    async setById(id: string, titleId: string, userId, status: string, episode: number, rating: number): Promise<Consumption> {
         this.consumptionModel.updateOne({_id: id}, {title: titleId, user: userId, status: status, episode: episode, rating: rating}).exec();
         //todo test if it works
         return this.getById(id);
     }
 
-    deleteById(id: string): boolean | PromiseLike<boolean> {
+    async deleteById(id: string): Promise<boolean> {
         this.consumptionModel.findOneAndDelete({_id: id}).exec();
         return true;
     }
+
+    async getByUserId(userId: string): Promise<Consumption[]> {
+        return this.consumptionModel.find({'user._id': userId}).exec();
+    }
+
+
 
 }

@@ -4,6 +4,8 @@ import { List } from './list.schema';
 import { ListInput } from './list.input';
 import { ApiCreatedResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ListUpdate } from './list.update';
+import { Cons } from 'rxjs';
+import { Consumption } from 'src/consumptions/consumption.schema';
 
 @ApiTags('lists')
 @Controller('lists')
@@ -78,7 +80,7 @@ export class ListsController {
         type: String,
         required: true
     })
-    async getContent(@Param('listId') listId: string, @Param('userId') userId: string): Promise<List> {
+    async getContent(@Param('listId') listId: string, @Param('userId') userId: string): Promise<Consumption[]> {
         return this.service.getContent(listId, userId);
     }
 

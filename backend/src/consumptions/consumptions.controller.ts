@@ -53,5 +53,15 @@ export class ConsumptionsController {
         return this.service.deleteById(parameter.id);
     }
 
+    @Get('user/:id')
+    @ApiParam({
+        name: 'id',
+        description: 'The id of the user',
+        type: String,
+        required: true
+    })
+    async getByUserId(@Param('id') id: string): Promise<Consumption[]> {
+        return this.service.getByUserId(id);
+    }
 
 }

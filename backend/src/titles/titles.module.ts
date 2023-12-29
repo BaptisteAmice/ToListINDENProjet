@@ -8,6 +8,6 @@ import { TitlesService } from './titles.service';
   imports: [MongooseModule.forFeature([{ name: Title.name, schema: TitleSchema }])],
   controllers: [TitlesController],
   providers: [TitlesService],
-  exports: []
+  exports: [TitlesService]
 })
 export class TitlesModule {}
