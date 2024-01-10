@@ -11,7 +11,6 @@ export class ListsService {
     constructor(
         @InjectModel(List.name) private listModel: Model<List>,
         private readonly consumptionService: ConsumptionsService,
-
     ) {}
 
 
@@ -25,27 +24,40 @@ export class ListsService {
         return this.listModel.find().exec();
     }
 
-    getById(id: string): Promise<List> {
+    async getById(id: string): Promise<List> {
         return this.listModel.findOne({_id: id}).exec();
     }
 
-    setById(id: string, name: string, description: string, types: string[], tags: string[], consuptionStatus: string[]): Promise<List> {
+    async setById(id: string, name: string, description: string, types: string[], tags: string[], consuptionStatus: string[]): Promise<List> {
         this.listModel.updateOne({_id: id}, {name: name, description: description, types: types, tags: tags, consuptionStatus: consuptionStatus}).exec();
         //todo test if it works
         return this.getById(id);
     }
 
-    deleteById(id: string): boolean | PromiseLike<boolean> {
+    async deleteById(id: string): Promise<boolean> {
         this.listModel.findOneAndDelete({_id: id}).exec();
         return true;
     }
 
-    getContent(listId: string, userId: string): Promise<Consumption[]> {
-        //get all titles consumed by the user
+    async getContent(listId: string, userId: string): Promise<Consumption[]> {
+        let list = await this.getById(listId);
+        //get accepted status
+        let acceptedTypes = list.types;
+        //get accepted tags
+        let acceptedTags = list.tags;
+        //get accepted types
+        let acceptedStatus = list.consuptionStatus;
+
+        //get all titles consumed by the user and respecting the criterias
         let consumptions = this.consumptionService.getByUserId(userId);
 
         //filter by using the criteria of the list
         //TODOOOOOOOOOOOOOOOOOOOOOOOOO
+
+
+
+
+        
 
         return consumptions;
     }
