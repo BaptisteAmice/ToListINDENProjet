@@ -17,7 +17,7 @@ export class TitlesController {
         description: 'The user has been successfully created.'
     })
     async create(@Body() input: TitleInput): Promise<Title> {
-        return this.service.create(input.title,input.type,input.description,input.releaseDateStart,input.releaseDateEnd,input.country,input.episodeCount,input.alternate_title);
+        return this.service.create(input.title,input.type,input.tags,input.description,input.releaseDateStart,input.releaseDateEnd,input.country,input.episodeCount,input.alternate_title);
     }
 
     @Get('')

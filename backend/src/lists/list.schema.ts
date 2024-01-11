@@ -15,18 +15,18 @@ export class List {
     @Prop()
     tags: string[];
     @Prop()
-    consuptionStatus: string[];
+    consuptionStates: string[];
 
     
     //todo link to an user
     //@Prop()
 
-    constructor(name: string, description: string, types: string[], tags: string[], consuptionStatus: string[]) {
+    constructor(name: string, description: string, types: string[], tags: string[], consuptionStates: string[]) {
         this.name = name;
         this.description = description;
         this.types = types;
         this.tags = tags;
-        this.consuptionStatus = consuptionStatus;
+        this.consuptionStates = consuptionStates;
     }
 }
 

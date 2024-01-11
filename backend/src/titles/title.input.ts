@@ -16,6 +16,14 @@ export class TitleInput {
     type: string;
 
     @ApiProperty({
+        description: 'The tags of the title',
+        example: "{'action', 'science-fiction'}",
+        type: String,
+    })
+    tags: string[];
+
+
+    @ApiProperty({
         description: 'The description of the title',
         example: "A great movie",
         type: String,

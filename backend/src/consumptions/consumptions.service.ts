@@ -40,7 +40,7 @@ export class ConsumptionsService {
     }
 
     async getByUserId(userId: string): Promise<Consumption[]> {
-        return this.consumptionModel.find({'user._id': userId}).exec();
+        return this.consumptionModel.find({'user': userId}).exec();
     }
 
 
