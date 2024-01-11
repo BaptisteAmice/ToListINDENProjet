@@ -42,6 +42,7 @@ export class ListsService {
         return true;
     }
 
+    //todo tester
     async getContent(listId: string, userId: string): Promise<Consumption[]> {
         let list = await this.getById(listId);
         //get accepted status

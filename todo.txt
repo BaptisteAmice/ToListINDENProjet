@@ -1,6 +1,6 @@
 - readme
 - roadmap
-- user manual
+- user manual -> faire interface
 
 //mongoose contrainte d'unicite parce que c'est nul
 //mongoose drop cascade
