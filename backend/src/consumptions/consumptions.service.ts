@@ -13,9 +13,9 @@ export class ConsumptionsService {
         private titlesService: TitlesService) {}
 
     async create(titleId: string, userId, status: string, episode: number, rating: number) : Promise<Consumption> {
-        let title = await this.titlesService.getById(titleId);
-        let user = await this.usersService.getById(userId);
-        const consumption = new Consumption(title, user, status, episode, rating);
+        //let title = await this.titlesService.getById(titleId);
+        //let user = await this.usersService.getById(userId);
+        const consumption = new Consumption(titleId, userId, status, episode, rating);
         const createdConsumption = new this.consumptionModel(consumption);
         return createdConsumption.save();
     }
