@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -13,6 +14,12 @@ const routes: Routes = [
     component: UserComponent,
     canActivate: [(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
       inject(AuthGuard).canActivate(next, state)], },
+    {
+      path: 'users',
+      component: UsersListComponent,
+      //canActivate: [(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
+        //inject(AuthGuard).canActivate(next, state)],
+      },
    { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

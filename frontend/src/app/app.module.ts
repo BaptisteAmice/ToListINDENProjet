@@ -20,6 +20,7 @@ import { UserComponent } from './user/user.component';
 import { MatSelectModule } from '@angular/material/select';
 import { PopupComponent } from './popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { UsersListComponent } from './users-list/users-list.component';
 
 
 
@@ -30,7 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     NavComponent,
     PopupComponent,
-    UserComponent
+    UserComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

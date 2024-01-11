@@ -121,3 +121,8 @@
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+[hidden] {
+  display: none; // to make the property also work with tailwind
+}
+

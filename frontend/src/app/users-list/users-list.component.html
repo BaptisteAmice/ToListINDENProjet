@@ -1,0 +1,137 @@
+
+<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+  ...
+</mat-autocomplete>
+<!--
+<div class="max-w-3xl mx-auto">
+<div class="flex flex-col">
+<div class="overflow-x-auto shadow-md sm:rounded-lg">
+<div class="inline-block min-w-full align-middle">
+<div class="overflow-hidden ">
+-->
+<div class="max-w-5xl rounded shadow-lg mx-auto">
+  <div class="mt-5 relative">
+    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg>
+    </div>
+    <div class="flex">
+      <input (keyup)="updateSearch()" [(ngModel)]='searchValue' [value]='searchValue' type="search" id="default-search" class="block w-full py-1 px-2 ps-10 text-sm text-gray-900 border bg-gray-200  rounded focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={{searchParam}}>
+
+      <button id="dropdownSearchParam" data-dropdown-toggle="dropdownSearch" data-dropdown-trigger="hover" class="text-white shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none font-medium text-sm px-4 py-1.5 text-center inline-flex items-center rounded mr-12" type="button">{{searchParam}}
+        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+
+        <!-- Dropdown menu -->
+        <div id="dropdownSearch" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700">
+            <ul *ngFor="let param of searchOptions" class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
+              <li>
+                <button (click)="setSearchParam(param)" class="px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" >{{param}}</button>
+              </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+
+  <table class="text-center min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+    <thead>
+      <tr>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Id
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Pseudo
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            PP
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Inscription
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            Mail
+          </p>
+        </th>
+        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+            <!--Details-->
+          </p>
+        </th>
+      </tr>
+        <tr>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <!--id-->
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <input class="bg-gray-200 dark:bg-gray-300 text-sm appearance-none border-2 border-gray-200 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pseudo" type="text" placeholder="Doe">
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <input class="bg-gray-200 dark:bg-gray-300 text-sm appearance-none border-2 border-gray-200 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pfp" type="file">
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <!--inscription-->
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <input class="bg-gray-200 dark:bg-gray-300 text-sm appearance-none border-2 border-gray-200 rounded w-full py-1 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="mail" type="email" placeholder="test@gmail.com">
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <button (click)="add()" class="m-1 shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-14 rounded" type="button">
+              +
+            </button>
+          </th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of dataSource">
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            {{user._id}}
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            {{user.pseudo}}
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+            {{user.pfp}}
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            {{user.inscription}}
+          </p>
+        </td>
+        <td class="p-4 border-b border-blue-gray-50">
+          <p class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+            {{user.mail}}
+          </p>
+        </td>
+        <td class=" border-b border-blue-gray-50">
+          <a href="/user/{{user._id}}" class="m-1 shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold pl-2 pr-1 pt-2 pb-1 rounded">
+            •••
+          </a>
+          <button (click)="delete(user._id)" id={{user._id}} class="m-1 shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-2 rounded" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+            </svg>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
