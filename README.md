@@ -16,7 +16,7 @@ Notre cible est internationale, mais la majorité des utilisateur de logiciels d
 
 D'après les statistiques utilisateurs, 55% des utilisateurs utilisent l'application sur mobile et 45% sur ordinateur. Nous prévoyons donc une interface responsive pour s'adapter à tous les écrans. La première version de l'application sera développée pour ordinateur, plus facile à porter sur mobile que l'inverse.
 
-Toujours d'après la même spurce, le public des applications existantes se compose ajourdh'hui principalement d'hommes de moins de 25 ans. Nous tâcherons donc d'attirer un public plus diversifié, notamment féminin et/ou plus âgé. Cela pourra notamment passer par une interface plus intuitive et le jeu de données initial de l'application.
+Toujours d'après la même source, le public des applications existantes se compose ajourdh'hui principalement d'hommes de moins de 25 ans. Nous tâcherons donc d'attirer un public plus diversifié, notamment féminin et/ou plus âgé. Cela pourra notamment passer par une interface plus intuitive et le jeu de données initial de l'application.
 
 ## Résolution du problème
 todo le problème qu'elle se propose de résoudre et comment elle y parvient
@@ -31,4 +31,4 @@ todo la procédure d'installation pas à pas. Je vous invite à la tester vous-m
 
 
 ## Utilisation
-todo une référence au "manuel d'utilisation" (cf. fichier suivant).
+Lien vers <a href="./ROADMAP.md">le manuel d'utilisation</a>.
