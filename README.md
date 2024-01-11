@@ -58,4 +58,7 @@ npm start
 ```
 
 ## Utilisation
-Lien vers <a href="./ROADMAP.md">le manuel d'utilisation</a>.
+Lien vers <a href="./USER_MANUAL.md">le manuel d'utilisation</a>.
+
+## Roadmap
+Lien vers <a href="./ROADMAP.md">la roadmap</a>.
