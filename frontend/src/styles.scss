@@ -1,8 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-html, body { height: 100%; overflow: hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@mixin threeDtext($color) {
+    color: $color;
+    text-shadow:
+      0 2px 0 darken($color, 14%),
+      0 4px 0 darken($color, 16%),
+      0 6px 0 darken($color, 18%),
+      0 8px 0 darken($color, 20%),
+      3px 8px 15px rgba(0,0,0,0.1),
+      3px 8px 5px rgba(0,0,0,0.3);
+  }
+
+  @mixin threeDtextRainbow() {
+      animation: colorRotate 6s linear 0s infinite;
+  }
+
+  .threeD {
+    //@include threeDtext(#ad00fd);
+    @include threeDtextRainbow();
+  }
+
+  .rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+    animation: colorRotate 6s linear 0s infinite;
+  }
+
+  @keyframes colorRotate {
+    from {
+      color: #6666ff;
+      text-shadow:
+      0 2px 0 darken(#6666ff, 14%),
+      0 4px 0 darken(#6666ff, 16%),
+      0 6px 0 darken(#6666ff, 18%),
+      0 8px 0 darken(#6666ff, 20%),
+      3px 8px 15px rgba(0,0,0,0.1),
+      3px 8px 5px rgba(0,0,0,0.3);
+    }
+    10% {
+      color: #0099ff;
+      text-shadow:
+      0 2px 0 darken(#0099ff, 14%),
+      0 4px 0 darken(#0099ff, 16%),
+      0 6px 0 darken(#0099ff, 18%),
+      0 8px 0 darken(#0099ff, 20%),
+      3px 8px 15px rgba(0,0,0,0.1),
+      3px 8px 5px rgba(0,0,0,0.3);
+    }
+    50% {
+      color: #00ff00;
+      text-shadow:
+      0 2px 0 darken(#00ff00, 14%),
+      0 4px 0 darken(#00ff00, 16%),
+      0 6px 0 darken(#00ff00, 18%),
+      0 8px 0 darken(#00ff00, 20%),
+      3px 8px 15px rgba(0,0,0,0.1),
+      3px 8px 5px rgba(0,0,0,0.3);
+    }
+    75% {
+      color: #ff3399;
+      text-shadow:
+      0 2px 0 darken(#ff3399, 14%),
+      0 4px 0 darken(#ff3399, 16%),
+      0 6px 0 darken(#ff3399, 18%),
+      0 8px 0 darken(#ff3399, 20%),
+      3px 8px 15px rgba(0,0,0,0.1),
+      3px 8px 5px rgba(0,0,0,0.3);
+    }
+    100% {
+      color: #6666ff;
+      text-shadow:
+      0 2px 0 darken(#6666ff, 14%),
+      0 4px 0 darken(#6666ff, 16%),
+      0 6px 0 darken(#6666ff, 18%),
+      0 8px 0 darken(#6666ff, 20%),
+      3px 8px 15px rgba(0,0,0,0.1),
+      3px 8px 5px rgba(0,0,0,0.3);
+    }
+  }
+
+  .rainbow_text_animated {
+    &:hover {
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+    }
+  }
+
+  .ring-offset-rainbow {
+    &:focus {
+      background: linear-gradient(50deg, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+      -webkit-background-clip:padding-box;
+      background-clip: padding-box;
+      animation: rainbow_animation 6s ease-in-out infinite;
+      background-size: 600% 100%;
+    }
+  }
+
+  @keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+  }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
