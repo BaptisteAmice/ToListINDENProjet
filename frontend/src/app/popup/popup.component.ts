@@ -1,13 +1,25 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-popup',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './popup.component.html',
   styleUrl: './popup.component.scss'
 })
-export class PopupComponent {
+export class PopupComponent implements OnInit, OnDestroy {
+  message: string = '';
+  title: string = '';
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+      this.message = data.message;
+      this.title = data.title;
+  }
+
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  ngOnInit(): void {
+
+  }
 
 }
