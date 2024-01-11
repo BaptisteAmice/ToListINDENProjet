@@ -1,4 +1,48 @@
-<p>home works!</p>
-<div class="corps">
-  <div *ngFor="let item of items">{{ item }}</div>
+<div class="max-w-5xl rounded shadow-lg mx-auto">
+  <div class="mt-5 relative">
+    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+      </svg>
+    </div>
+    <div class="flex">
+      <input (keyup)="updateSearch()" [(ngModel)]='searchValue' [value]='searchValue' type="search" id="default-search" class="block w-full py-1 px-2 ps-10 text-sm text-gray-900 border bg-gray-200  rounded focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={{searchParam}}>
+
+      <button id="dropdownSearchParam" data-dropdown-toggle="dropdownSearch" data-dropdown-trigger="hover" class="text-white shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none font-medium text-sm px-4 py-1.5 text-center inline-flex items-center rounded mr-12" type="button">{{searchParam}}
+        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
+
+        <!-- Dropdown menu -->
+        <div id="dropdownSearch" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700">
+            <ul *ngFor="let param of searchOptions" class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
+              <li>
+                <button (click)="setSearchParam(param)" class="px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" >{{param}}</button>
+              </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl rounded shadow-lg mx-auto">
+    <div class="mt-5 relative">
+      <!-- Your search bar code remains unchanged -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Loop through dataSource to display titles -->
+        <div *ngFor="let title of dataSource" class="relative overflow-hidden rounded shadow-lg">
+          <!-- Placeholder for the background image. Replace 'your_image_url' with the actual URL -->
+          <div class="bg-cover bg-center h-40" style="background-image: url('your_image_url');"></div>
+
+          <div class="absolute inset-0 bg-black opacity-50"></div>
+
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-white text-lg font-bold text-center z-10">{{title.title}}</p>
+          </div>
+        </div>
+        <!-- End of loop -->
+      </div>
+    </div>
+  </div>
 </div>
