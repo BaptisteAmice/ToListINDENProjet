@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Types } from 'mongoose';
 import { Title } from 'src/titles/title.schema';
 import { ConsumptionStatus } from './consumption.status';
 import { User } from 'src/users/user.schema';
@@ -9,11 +9,11 @@ export type ConsumptionDocument = HydratedDocument<Consumption>;
 
 @Schema()
 export class Consumption {
-    @Prop()
-    piece: Title; 
+    @Prop({ type: Types.ObjectId, ref: () => 'Title'})
+    piece: String; 
 
-    @Prop()
-    user: User;
+    @Prop({ type: Types.ObjectId, ref: () => 'User'})
+    user: String;
     
     @Prop()
     state: string;
@@ -22,7 +22,7 @@ export class Consumption {
     @Prop()
     rating: number;
 
-    constructor(piece: Title, user: User, state: string, episodeConsumed: number, rating: number) {
+    constructor(piece: String, user: String, state: string, episodeConsumed: number, rating: number) {
         this.piece = piece;
         this.user = user;
         this.state = state;
@@ -31,5 +31,6 @@ export class Consumption {
     }
 }
 
-export const ConsumptionSchema = SchemaFactory.createForClass(Consumption);
+export const ConsumptionSchema = SchemaFactory.createForClass(Consumption)
+                .index({ piece: 1, user: 1 }, { unique: true });
 

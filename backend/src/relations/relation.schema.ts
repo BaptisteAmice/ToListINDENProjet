@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Types } from 'mongoose';
 
 export type RelationDocument = HydratedDocument<Relation>;
 
@@ -7,10 +7,10 @@ export type RelationDocument = HydratedDocument<Relation>;
 @Schema()
 export class Relation {
 
-    @Prop()
+    @Prop({ type: Types.ObjectId, ref: () => 'Title'}) //todo voir si ca marche
     idCurrentTitle: string;
 
-    @Prop()
+    @Prop({ type: Types.ObjectId, ref: () => 'Title'})
     idRelatedTitle: string;
 
     @Prop()

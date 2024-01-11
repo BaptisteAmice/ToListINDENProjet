@@ -5,7 +5,7 @@ import { ApiProperty } from "@nestjs/swagger";
 export class ConsumptionInput {
     @ApiProperty({
         description: 'The consumed title id',
-        example: "654ca2888d15f7020b656055",
+        example: "659fa084a1217f5eb2263ef3",
         type: String,
     })
     pieceId: string;

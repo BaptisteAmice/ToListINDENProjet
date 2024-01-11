@@ -2,6 +2,8 @@
 - roadmap
 - user manual
 
+//mongoose contrainte d'unicite parce que c'est nul
+//mongoose drop cascade
 
 page listes officielles / listes customs
 
