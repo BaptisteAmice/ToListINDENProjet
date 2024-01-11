@@ -11,12 +11,14 @@ export class AuthService {
     
     /**
      * Check if the user is valid
-     * @param id 
+     * @param pseudo 
      * @param password 
      */
-    public async validateUser(id: string, password: string) : Promise<User> {
+    public async validateUser(pseudo: string, password: string) : Promise<User> {
         //get the user
-        const user : User = await this.usersService.getById(id);
+        const user : User = await this.usersService.getByPseudo(pseudo);
+        console.log('test');  
+        console.log(user);
         if(user !== undefined && user !== null && await this.usersService.comparePassword(password, user.password)) {
             return user;
         }
@@ -24,7 +26,7 @@ export class AuthService {
     }
 
     async login(user: any) {
-        const payload = { username: user.id };
+        const payload = { username: user.pseudo };
         return {
             access_token: this.jwtService.sign(payload),
         };

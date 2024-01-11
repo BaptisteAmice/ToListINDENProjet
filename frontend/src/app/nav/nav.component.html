@@ -32,8 +32,9 @@
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="" class="rainbow_text_animated block font-bold rounded-md px-3 py-2 text-m" aria-current="page"> Home</a>
-             <div [hidden]="!isLogged" class="flex space-x-4">
-              <a href="Untruc" class="rainbow_text_animated block rounded-md px-3 py-2 text-m">Untruc</a>
+             <!-- <div [hidden]="!isLogged" class="flex space-x-4"> -->
+              <div class="flex space-x-4"> <!-- todo : en attendant login fonctionnel -->
+              <a href="/users" class="rainbow_text_animated block rounded-md px-3 py-2 text-m">Users</a>
              </div>
             </div>
         </div>

@@ -29,6 +29,17 @@ export class UsersController {
         return this.service.getById(id);
     }
 
+    @Get('pseudo/:pseudo')
+    @ApiParam({
+        name: 'pseudo',
+        description: 'The pseudo of the user',
+        type: String,
+        required: true
+    })
+    async getByPseudo(@Param('pseudo') pseudo: string): Promise<User> {
+        return this.service.getByPseudo(pseudo);
+    }
+
     @Post()
     @ApiCreatedResponse({
         description: 'The user has been successfully created.'

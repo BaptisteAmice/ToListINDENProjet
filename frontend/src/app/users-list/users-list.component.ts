@@ -16,7 +16,7 @@ export class UsersListComponent implements OnInit {
     searchValue: string = '';
     fullUserList: any = [];
     searchOptions: string[] = ['_id','pseudo','pfp','inscription','mail'];
-    searchParam: string = '_id';
+    searchParam: string = 'pseudo';
 
     constructor(
       private api: ApiHelperService,
@@ -54,12 +54,20 @@ export class UsersListComponent implements OnInit {
     }
 
     try {
+      let errorAdding: boolean = false;
       this.api.post({endpoint: '/users', data: { pseudo, mail, inscription, password }}).then(response => {},
-        error => this.popupService.openPopup("Can't add user : "+ error.message,"Error "+error.status))
+        error => {
+          this.popupService.openPopup("Can't add user : "+ error.message,"Error "+error.status);
+          errorAdding = true;
+            }
+          )
         .finally(() => {
           //update the list (we can't just simulate the update because we need the generated id)
-          this.updateDataSource();
-          this.popupService.openPopup("User added with temporary password ( please change it later ) : " + password);
+          if(!errorAdding){
+            this.updateDataSource();
+            this.popupService.openPopup("User added with temporary password ( please change it later ) : " + password);
+          }
+
         });
     } catch (error) {
       console.log(error);

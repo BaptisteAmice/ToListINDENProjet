@@ -14,7 +14,7 @@ import { JwtStrategy } from './jwt.strategy';
       PassportModule,
       JwtModule.register({
         secret: jwtConstants.secret,
-        signOptions: { expiresIn: '60s' },
+        signOptions: { expiresIn: '60s' }, // todo patch ca marche pas
       })
     ],
     providers: [AuthService, LocalStrategy, JwtStrategy],

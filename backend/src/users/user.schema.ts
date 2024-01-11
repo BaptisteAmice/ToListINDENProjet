@@ -35,4 +35,5 @@ export class User {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+UserSchema.index({ pseudo: 1 }, { unique: true });
 

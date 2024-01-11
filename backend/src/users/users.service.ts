@@ -6,6 +6,7 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
+    forbiddenPseudo : string[] = ["pseudo"];
     constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
     async getAll(): Promise<User[]> {
@@ -16,8 +17,17 @@ export class UsersService {
         return this.userModel.findOne({_id: id}).exec();
     }
 
+    async getByPseudo(pseudo: string): Promise<User> {
+        return this.userModel.findOne({pseudo: pseudo}).exec();
+    }
+
 
     async create(pseudo:string, pfp:string, password:string, r_token:string, inscription:Date, mail:string) : Promise<User> {
+        //check if pseudo is not forbidden
+        if(this.forbiddenPseudo.includes(pseudo.toLowerCase())) {
+            throw new HttpException('Pseudo is forbidden', HttpStatus.BAD_REQUEST);
+        }
+        
         let hashedPassword = password;
         if(password != undefined && password != null) {
             hashedPassword= await this.hashPassword(password);
@@ -28,6 +38,11 @@ export class UsersService {
     }
 
     async setById(id: string, pseudo:string, pfp:string, password:string, r_token:string, inscription:Date, mail:string, userLists:string[]): Promise<User> {
+        //check if pseudo is not forbidden
+        if(this.forbiddenPseudo.includes(pseudo.toLowerCase())) {
+            throw new HttpException('Pseudo is forbidden', HttpStatus.BAD_REQUEST);
+        }
+        
         let hashedPassword = password;
         if(password != undefined && password != null) {
             hashedPassword= await this.hashPassword(password);

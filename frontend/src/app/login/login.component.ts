@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
       this.isLogged = this.tokenStorageService.isLogged();
       if(this.isLogged){
-        let connectedUserId = this.tokenStorageService.getUsername();
-        this.api.get({endpoint: '/users/'+connectedUserId}).then(response => {
+        let connectedUserName = this.tokenStorageService.getUsername();
+        this.api.get({endpoint: '/users/pseudo/'+connectedUserName}).then(response => {
           this.connectedUser = response;
         });
       }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     login(): void {
       const username: string = (document.getElementById('username') as HTMLInputElement).value;
       const password: string = (document.getElementById('password') as HTMLInputElement).value;
-      this.api.post({endpoint: '/auth/login', data: { username, password },})
+      this.api.post({endpoint: '/auth/login', data: { username, password }})
         .then(response => {
           this.tokenStorageService.save(response.access_token, username),
           this.isLogged = this.tokenStorageService.isLogged(),

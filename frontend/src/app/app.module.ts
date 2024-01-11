@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { PopupComponent } from './popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UsersListComponent } from './users-list/users-list.component';
+import { TitleListComponent } from './title-list/title-list.component';
 
 
 
@@ -32,7 +33,8 @@ import { UsersListComponent } from './users-list/users-list.component';
     NavComponent,
     PopupComponent,
     UserComponent,
-    UsersListComponent
+    UsersListComponent,
+    TitleListComponent
   ],
   imports: [
     BrowserModule,
