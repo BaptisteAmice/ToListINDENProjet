@@ -27,8 +27,26 @@ Comment compléter une offre aujourd’hui fragmentaire et répondre à une dema
 
 ## Installation
 
-todo la procédure d'installation pas à pas. Je vous invite à la tester vous-même, et éventuellement par une personne qui est en dehors de votre groupe. A la fin de la procédure d'installation je dois être capable de lancer l'application et de la tester.
+Pour télécharger le projet, on utilise simplement la commande:
+```sh
+git clone https://github.com/BaptisteAmice/ToListINDENProjet/
+```
 
+Il faut ensuite démarrer les services du back-end et du front-end. Pour cela on se place d'abord dans le projet:
+```sh
+cd ToListINDENProjet
+```
+
+Puis pour démarrer le front-end:
+```sh
+cd frontend/
+npm start
+```
+Pour démarrer le front-end (dans un autre shell):
+```sh
+cd backend/
+npm start
+```
 
 ## Utilisation
 Lien vers <a href="./ROADMAP.md">le manuel d'utilisation</a>.
