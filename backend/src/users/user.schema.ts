@@ -22,8 +22,6 @@ export class User {
     mail: string;
     @Prop()
     userLists: List[];
-    @Prop()
-    consumptionList: Consumption[];
 
     constructor(pseudo: string, pfp: string, password: string, r_token: string, inscription: Date, mail: string) {
         this.pseudo=pseudo;
@@ -33,7 +31,6 @@ export class User {
         this.inscription=inscription;
         this.mail=mail;
         this.userLists = [];
-        this.consumptionList = [];
     }
 }
 

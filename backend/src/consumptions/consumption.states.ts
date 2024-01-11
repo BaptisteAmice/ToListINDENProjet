@@ -1,4 +1,4 @@
-export enum ConsumptionStatus {
+export enum consumptionStates {
     towatch="to complete",
     completed="completed",
     inprogress="in progress",

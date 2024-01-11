@@ -11,6 +11,8 @@ export class Title {
     @Prop()
     type: string;
     @Prop()
+    tags: string[];
+    @Prop()
     description: string;
     @Prop()
     releaseDateStart: Date;
@@ -23,9 +25,10 @@ export class Title {
     @Prop()
     alternate_title: string;
 
-    constructor(title: string, type: string, description: string, releaseDateStart: Date, releaseDateEnd: Date, country: string, episodeCount: number, alternate_title: string) {
+    constructor(title: string, type: string,tags: string[], description: string, releaseDateStart: Date, releaseDateEnd: Date, country: string, episodeCount: number, alternate_title: string) {
         this.title = title;
         this.type = type;
+        this.tags = tags;
         this.description = description;
         this.releaseDateStart = releaseDateStart;
         this.releaseDateEnd = releaseDateEnd;

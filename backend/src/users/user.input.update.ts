@@ -2,7 +2,7 @@ import { ApiProperty } from "@nestjs/swagger";
 
 
 
-export class UserInput {
+export class UserInputUpdate {
     @ApiProperty({
         description: 'Username of the user',
         example: "Shadow",
@@ -45,4 +45,11 @@ export class UserInput {
         type: String,
     })
     mail: string;
+
+    @ApiProperty({
+        description: 'User lists',
+        example: ['654ca2888d15f7020b656055'],
+        type: String,
+    })
+    userLists: string[];
 }
