@@ -16,7 +16,7 @@ Notre cible est internationale, mais la majorité des utilisateur de logiciels d
 
 D'après les statistiques utilisateurs, 55% des utilisateurs utilisent l'application sur mobile et 45% sur ordinateur. Nous prévoyons donc une interface responsive pour s'adapter à tous les écrans. La première version de l'application sera développée pour ordinateur, plus facile à porter sur mobile que l'inverse.
 
-Toujours d'après la même spurce, le public des applications existantes se compose ajourdh'hui principalement d'hommes de moins de 25 ans. Nous tâcherons donc d'attirer un public plus diversifié, notamment féminin et/ou plus âgé. Cela pourra notamment passer par une interface plus intuitive et le jeu de données initial de l'application.
+Toujours d'après la même source, le public des applications existantes se compose ajourdh'hui principalement d'hommes de moins de 25 ans. Nous tâcherons donc d'attirer un public plus diversifié, notamment féminin et/ou plus âgé. Cela pourra notamment passer par une interface plus intuitive et le jeu de données initial de l'application.
 
 ## Résolution du problème
 todo le problème qu'elle se propose de résoudre et comment elle y parvient
@@ -27,8 +27,26 @@ Comment compléter une offre aujourd’hui fragmentaire et répondre à une dema
 
 ## Installation
 
-todo la procédure d'installation pas à pas. Je vous invite à la tester vous-même, et éventuellement par une personne qui est en dehors de votre groupe. A la fin de la procédure d'installation je dois être capable de lancer l'application et de la tester.
+Pour télécharger le projet, on utilise simplement la commande:
+```sh
+git clone https://github.com/BaptisteAmice/ToListINDENProjet/
+```
 
+Il faut ensuite démarrer les services du back-end et du front-end. Pour cela on se place d'abord dans le projet:
+```sh
+cd ToListINDENProjet
+```
+
+Puis pour démarrer le front-end:
+```sh
+cd frontend/
+npm start
+```
+Pour démarrer le front-end (dans un autre shell):
+```sh
+cd backend/
+npm start
+```
 
 ## Utilisation
-todo une référence au "manuel d'utilisation" (cf. fichier suivant).
+Lien vers <a href="./ROADMAP.md">le manuel d'utilisation</a>.
