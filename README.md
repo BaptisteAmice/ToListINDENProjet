@@ -16,14 +16,23 @@ Notre cible est internationale, mais la majorité des utilisateur de logiciels d
 
 D'après les statistiques utilisateurs, 55% des utilisateurs utilisent l'application sur mobile et 45% sur ordinateur. Nous prévoyons donc une interface responsive pour s'adapter à tous les écrans. La première version de l'application sera développée pour ordinateur, plus facile à porter sur mobile que l'inverse.
 
-Toujours d'après la même source, le public des applications existantes se compose ajourdh'hui principalement d'hommes de moins de 25 ans. Nous tâcherons donc d'attirer un public plus diversifié, notamment féminin et/ou plus âgé. Cela pourra notamment passer par une interface plus intuitive et le jeu de données initial de l'application.
+Toujours d'après la même source, le public des applications existantes se compose aujourd'hui principalement d'hommes de moins de 25 ans. Nous tâcherons donc d'attirer un public plus diversifié, notamment féminin et/ou plus âgé. Cela pourra notamment passer par une interface plus intuitive et le jeu de données initial de l'application.
 
 ## Résolution du problème
-todo le problème qu'elle se propose de résoudre et comment elle y parvient
-
 Comme décrit dans le contexte, ...........................
 
-Comment compléter une offre aujourd’hui fragmentaire et répondre à une demande existante dans le domaine des applications de catalogage social ?
+Notre solution vise d'abord à résoudre le problème de fragmentation de l'offre. Pour cela nous avons adoptée une architecture plus souple nous permettant d'enregistrer et de manipuler dans la même base de données aussi bien:
+- Des films
+- Des livres
+- Des séries
+- Des jeux
+
+Ainsi nous regroupons la majorité des médias traqués par des applications de catalogage social.
+<br>
+Par la suite il sera aussi plus simple d'ajouter des nouveaux types de données dans cette base de données, et donc de nous adapter facilement en cas d'apparition d'un nouveau type de médias.
+<br><br>
+
+// TODO? : Parler de la forme de l'appli?
 
 ## Installation
 
