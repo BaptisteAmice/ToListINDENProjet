@@ -20,15 +20,15 @@ export class HomeComponent {
   items: string[] = [];
 
   ngOnInit(): void {
-    this.getPosts().subscribe(
-      (response) => {
+    this.getPosts().subscribe({
+      next: (response) => {
         // Assurez-vous que la réponse contient un tableau d'objets avec la propriété "name"
         this.items = response.map(item => item.title);
       },
-      (error) => {
+      error: (error) => {
         console.error('Erreur lors de la récupération des données :', error);
       }
-    );
+    });
   }
 
   getPosts(): Observable<any[]> {
