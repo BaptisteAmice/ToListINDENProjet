@@ -23,7 +23,7 @@ export class HomeComponent {
     this.getPosts().subscribe(
       (response) => {
         // Assurez-vous que la réponse contient un tableau d'objets avec la propriété "name"
-        this.items = response.map(item => item.name);
+        this.items = response.map(item => item.title);
       },
       (error) => {
         console.error('Erreur lors de la récupération des données :', error);
@@ -32,6 +32,6 @@ export class HomeComponent {
   }
 
   getPosts(): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost:3000/lists`);
+    return this.http.get<any[]>(`http://localhost:3000/titles`);
   }
 }
