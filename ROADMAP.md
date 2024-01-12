@@ -2,7 +2,13 @@ todo Un fichier "ROADMAP" qui détaille les étapes du projet pour l'année 2023
 
 # État du projet
 
-Ce début d'année nous a permis de fixer les technoogies utilisées (nest et angular), et de créer une base solide pour le back-end. Les technologies pour le front-end sont en place, mais ne sont pas encore utilisées réellement.
+Ce début d'année nous a permis de fixer les technogies utilisées (nest et angular), et de créer une base solide pour le back-end. Les technologies pour le front-end sont en place, mais toutes les pages necessaires n'ont pas encore été créées.
+
+
+L'itération actuelle du projet est en retard par rapport à nos anticipations. En effet, il s'avère que cette passe du projet a davantage été faucalisée sur le choix des technologies et leur prise en main, plutôt qu'à leur utilisation.
+
+on voulait techno adaptées et modulables................................. //todo
+Mais on connaissais pas mongo et type script et il a donc fallut s'y former.................. //todo
 
 # Tâches restantes
 
