@@ -1,6 +1,12 @@
 # Manuel utilisateur
 Comme détaillé dans la <a href="./ROADMAP.md">roadmap</a>, la partie front de l'application n'est pas avancée. Nous avons un nombre très restreint de fonctionnalités. Aussi, l'affiche n'est pas encore adapté à des petits écrans ou à des écrans de téléphone.
 
+
+## API Backend
+Le back-end est accessible sous la forme d'une API REST. Vous pouvez connaitre la liste des requêtes disponibles en vous entrant l'url `http://localhost:3000/api/` dans votre navigateur.
+<img src="images/swagger.png"/>
+
+
 ## Page d'accueil
 Nous avons une page d'accueil
 <img src="images/toListHomePage.png"/>

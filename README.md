@@ -2,7 +2,7 @@
 
 ## Contexte de l'application
 
-La consommation de médias dans nos sociétés modernes est de plus en plus importante et diversifiée (films, livres, musiques, jeux, etc.). De ce fait, de nombreuses applications apparaissent pour qu'un consommateur puisse suivre son avancée dans un média spécifique. Ces logiciels permettent de plus de partager cette avancée, elles prennent alors le nom d'applications de catalogage social.
+La consommation de médias dans nos sociétés modernes est de plus en plus importante et diversifiée (films, livres, musiques, jeux, etc.). De ce fait, de nombreuses applications apparaissent pour qu'un consommateur puisse suivre son avancée dans un média spécifique. Ces logiciels permettent de plus de partager cette avancée, ils prennent alors le nom d'applications de catalogage social.
 
 Cette offre est toutefois fragmentaire. Chaque application n'est spécialisée que dans un seul type de média et manque de modularité. Quelqu'un souhaitant suivre l'ensemble de ses avancées devra donc utiliser plusieurs applications aux interfaces et fonctionnalités différentes.
 
