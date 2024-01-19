@@ -44,12 +44,19 @@ cd ToListINDENProjet
 Puis pour démarrer le front-end:
 ```sh
 cd frontend/
+npm install # la première fois, pour l'installation des dépendances
 npm start
 ```
 Pour démarrer le front-end (dans un autre shell):
 ```sh
 cd backend/
+npm install # la première fois, pour l'installation des dépendances
 npm start
+```
+
+Pour le front, il se peut que vous ayez besoin d'installer Angular CLI:
+```sh
+npm install -g @angular/cli
 ```
 
 ## Utilisation
